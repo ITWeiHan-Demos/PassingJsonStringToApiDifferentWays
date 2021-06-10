@@ -43,5 +43,21 @@ namespace ApiActionWithAxios.Controllers
         {
             return content.GetType().FullName;
         }
+
+        [HttpPost]
+        [Route("ReqeustFormUrlencoded")]
+        public string ReqeustFormUrlencoded([FromBody] object content)
+        {
+            var type = content.GetType().FullName;
+            return type;
+        }
+
+        [HttpPost]
+        [Route("ReqeustFormUrlencodedStringType")]
+        public string ReqeustFormUrlencodedStringType([FromBody] string content)
+        {
+            var type = content.GetType().FullName;
+            return type;
+        }
     }
 }

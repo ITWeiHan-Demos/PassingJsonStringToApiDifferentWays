@@ -3,11 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiActionWithAxios", "ApiActionWithAxios\ApiActionWithAxios.csproj", "{51DA8329-6D88-42FF-80A5-F0C4407E9363}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiActionWithAxios", "ApiActionWithAxios\ApiActionWithAxios.csproj", "{51DA8329-6D88-42FF-80A5-F0C4407E9363}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{6A5D68C6-1BB5-4AFE-B70A-BE121A9201B3}"
 	ProjectSection(SolutionItems) = preProject
 		README.MD = README.MD
+		README.zh-Hant.MD = README.zh-Hant.MD
 	EndProjectSection
 EndProject
 Global

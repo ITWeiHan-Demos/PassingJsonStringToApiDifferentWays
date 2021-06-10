@@ -10,6 +10,8 @@ Read docs:
     <button onclick="Reqeust('TestUsingFromBodyAttribute')">TestUsingFromBodyAttribute</button> <br>
     <button onclick="Reqeust('TestUsingFromBodyAttributeStringType')">TestUsingFromBodyAttributeStringType</button> <br>
     <button onclick="Reqeust('JsonContentFromBodyAutoConvert')">JsonContentFromBodyAutoConvert</button> <br>
+    <button onclick="ReqeustFormUrlencoded('ReqeustFormUrlencoded')">ReqeustFormUrlencoded</button> <br>
+    <button onclick="ReqeustFormUrlencodedStringType('ReqeustFormUrlencodedStringType')">ReqeustFormUrlencodedStringType</button> <br>
     <script>
         function Reqeust(url) {
             axios({
@@ -17,6 +19,30 @@ Read docs:
                 url: url,
                 data: "{\"value\":\"Hello World\"}",
                 headers: { 'Content-Type': 'application/json' }
+            }).then(function (response) {
+                alert(JSON.stringify(response, null, 2));
+            }).catch(function (error) {
+                alert(JSON.stringify(error, null, 2));
+            })
+        }
+
+        function ReqeustFormUrlencoded(url) {
+            axios({
+                method: 'post',
+                url: url,
+                data: { value: "Hello World" }
+            }).then(function (response) {
+                alert(JSON.stringify(response, null, 2));
+            }).catch(function (error) {
+                alert(JSON.stringify(error, null, 2));
+            })
+        }
+
+        function ReqeustFormUrlencodedStringType(url) {
+            axios({
+                method: 'post',
+                url: url,
+                data: "{\"value\":\"Hello World\"}"
             }).then(function (response) {
                 alert(JSON.stringify(response, null, 2));
             }).catch(function (error) {

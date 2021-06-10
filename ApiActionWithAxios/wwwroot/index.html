@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+    <pre>
+Read docs:
+- https://weblog.west-wind.com/posts/2017/sep/14/accepting-raw-request-body-content-in-aspnet-core-api-controllers
+</pre>
+
+    <button onclick="Reqeust('TestUsingStreamReader')">TestUsingStreamReader</button> <br>
+    <button onclick="Reqeust('TestUsingFromBodyAttribute')">TestUsingFromBodyAttribute</button> <br>
+    <script>
+        function Reqeust(url) {
+            axios({
+                method: 'post',
+                url: url,
+                data: "{\"value\":\"Hello World\"}"
+            }).then(function (response) {
+                alert(JSON.stringify(response, null, 2));
+            })
+        }
+    </script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</body>
+</html>

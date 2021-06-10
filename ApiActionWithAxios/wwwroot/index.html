@@ -8,14 +8,19 @@ Read docs:
 
     <button onclick="Reqeust('TestUsingStreamReader')">TestUsingStreamReader</button> <br>
     <button onclick="Reqeust('TestUsingFromBodyAttribute')">TestUsingFromBodyAttribute</button> <br>
+    <button onclick="Reqeust('TestUsingFromBodyAttributeStringType')">TestUsingFromBodyAttributeStringType</button> <br>
+    <button onclick="Reqeust('JsonContentFromBodyAutoConvert')">JsonContentFromBodyAutoConvert</button> <br>
     <script>
         function Reqeust(url) {
             axios({
                 method: 'post',
                 url: url,
-                data: "{\"value\":\"Hello World\"}"
+                data: "{\"value\":\"Hello World\"}",
+                headers: { 'Content-Type': 'application/json' }
             }).then(function (response) {
                 alert(JSON.stringify(response, null, 2));
+            }).catch(function (error) {
+                alert(JSON.stringify(error, null, 2));
             })
         }
     </script>

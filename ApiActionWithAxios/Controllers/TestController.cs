@@ -25,9 +25,23 @@ namespace ApiActionWithAxios.Controllers
 
         [HttpPost]
         [Route("TestUsingFromBodyAttribute")]
-        public async Task<string> TestUsingFromBodyAttribute([FromBody] string content)
+        public object TestUsingFromBodyAttribute([FromBody] System.Text.Json.JsonElement content)
         {
             return content;
+        }
+
+        [HttpPost]
+        [Route("TestUsingFromBodyAttributeStringType")]
+        public async Task<string> TestUsingFromBodyAttributeStringType([FromBody] string content)
+        {
+            return content;
+        }
+
+        [HttpPost]
+        [Route("JsonContentFromBodyAutoConvert")]
+        public string JsonContentFromBodyAutoConvert([FromBody] object content)
+        {
+            return content.GetType().FullName;
         }
     }
 }
